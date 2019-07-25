@@ -11,24 +11,24 @@
 
     <!-- Input -->
     <ion-input [(ngModel)]="valorInput" placeholder="DIgite um termo"></ion-input>
-  
+
     <!-- Botão desativado -->
     <ion-button [disabled]="!valorInput" color="dark" expand="full" (click)="getJokers()">Exibir jokes</ion-button>
-    
+
     <!-- ngFor para carregar a lista -->
-    <div>
-      <ul>
-        <li *ngFor="let item of piadasFiltradas">
-          {{item.pergunta}}
-        </li>
-      </ul>
+    <div *ngIf="piadasFiltradas">
+      <div *ngFor="let item of piadasFiltradas">
+        <a (click)="prepareToDEtail(item)" [routerLink]="['/detalhar']" routerLinkActive="router-link-active">
+          <b>Pergunta:</b> {{ item.pergunta }}
+        </a>
+      </div>
     </div>
-    
+
     <div *ngIf="piada">
-      <img [src]="url" alt="risada"/>
+      <img [src]="url" alt="risada" />
       <h1>{{ piada.pergunta }}</h1>
       <h1>{{ piada.resposta }}</h1>
     </div>
-    
+
   </div>
 </ion-content>

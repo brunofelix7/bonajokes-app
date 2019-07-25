@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <img [src]="url" alt="risada" />
+    <h1 style="text-align: center;">
+      <b>Resposta:</b> {{ piada.resposta }}
+    </h1>
+  </div>
+</ion-content>
